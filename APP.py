@@ -37,6 +37,6 @@ if right_column.button("Predict"):  # 在右侧列放置预测按钮
     # 进行预测
     prediction = model.predict(X)[0]
     Predict_proba = model.predict_proba(X)[:, 1][0]
-
+    Predict_proba1=1-Predict_proba
     # 输出预测结果到空白容器
-    result_container.subheader(f"Probability of predicting favourable discharge outcome: {'%.2f' % (Predict_proba * 100)}%")
+    result_container.subheader(f"Probability of predicting unfavourable discharge outcome: {'%.2f' % (Predict_proba * 100)}%")
